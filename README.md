@@ -21,7 +21,7 @@ A location-based alarm system that triggers notifications when the user reaches 
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/lokeshkumar3103ar/location-alarm.git
+   git clone https://github.com/lokeshkumar3103ar/location-based-alarm-with-task-tracking
    ```
 2. Open `index.html` in your browser to run the application.
 
