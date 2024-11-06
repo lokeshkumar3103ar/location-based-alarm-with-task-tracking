@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test ALERT.mp3 Playback</title>
+</head>
+<body>
+    <h1>Test ALERT.mp3 Playback</h1>
+    
+    <button id="playSoundBtn">Play ALERT.mp3</button>
+
+    <audio id="alarmSound" src="ALERT.mp3" preload="auto"></audio>
+
+    <script>
+        // Add event listener to play the sound when the button is clicked
+        document.getElementById('playSoundBtn').addEventListener('click', function() {
+            const alarmSound = document.getElementById('alarmSound');
+            alarmSound.play().then(() => {
+                alert("ALERT.mp3 is playing successfully!");
+            }).catch((error) => {
+                console.error("Error playing ALERT.mp3:", error);
+                alert("There was an issue playing ALERT.mp3. Please check the file path and format.");
+            });
+        });
+    </script>
+</body>
+</html>

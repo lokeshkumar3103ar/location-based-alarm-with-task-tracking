@@ -1,0 +1,218 @@
+/* Importing the same fonts for consistency */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Roboto:wght@300;400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #1B263B, #3C6478);
+    color: #F2F4F3;
+    overflow-x: hidden;
+    line-height: 1.6;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: rgba(30, 30, 30, 0.9); /* Dark background for the container */
+    color: #F2F4F3; /* Light text color for contrast */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: morphIn 1.2s ease forwards;
+}
+
+
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+    color: rgb(39, 153, 109);
+    display: inline-block;
+    text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: 3.5rem;
+    background: linear-gradient(to right, hsl(147, 95%, 33%), #69ffa5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    font-size: 2.8rem;
+    background: linear-gradient(to right, hsl(147, 95%, 33%), #69ffa5); /* Yellow gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.task-input {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    transition: transform 0.3s ease;
+}
+
+#taskInput, #taskDescription {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+    box-sizing: border-box;
+    background: #F2F4F3; /* Soft Cream White */
+    color: #1B263B; /* Dark Navy */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#taskDescription {
+    height: 90px;
+    resize: none;
+}
+
+#taskInput:focus, #taskDescription:focus {
+    background-color: #E8E9EB; /* Lightened Cream White on focus */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+#addTaskBtn {
+    padding: 12px;
+    cursor: pointer;
+    background-color: #16A085;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    transition: background-color 0.4s ease, transform 0.3s ease;
+}
+
+#addTaskBtn:hover {
+    background-color: #0D695E; /* Darker Teal on hover */
+    transform: scale(1.05);
+}
+
+.task-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.task-list ul li {
+    background: #0D695E; /* Light Blue for tasks */
+    padding: 12px;
+    margin-bottom: 12px;
+    color: white;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    animation: fadeInTask 0.8s ease-in-out forwards;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: transform 0.3s ease;
+}
+
+.task-list ul li:hover {
+    transform: scale(1.03);
+}
+
+@keyframes fadeInTask {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#taskInput::placeholder {
+    opacity: 0.5;
+    letter-spacing: 2px;
+}
+
+#taskInput:focus::placeholder, #taskDescription:focus::placeholder {
+    opacity: 0.5;
+    transition: opacity 0.4s ease;
+}
+
+.custom-div-icon {
+    position: relative;
+    width: 35px;
+    height: 50px;
+}
+
+.custom-div-icon .marker {
+    background-color: #ff9f43;
+    border-radius: 50% 50% 0 0;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 3px solid white;
+}
+
+.custom-div-icon .marker::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 15px;
+    background-color: #ff9f43;
+    border: 3px solid white;
+    border-radius: 50%;
+}
+
+@keyframes morphIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.8rem;
+    }
+
+    h2 {
+        font-size: 2.3rem;
+    }
+
+    .container {
+        padding: 15px;
+    }
+}
+
+html{
+    background-image: url(./Rosetta_at_Comet_portrait_pillars.jpg);
+    object-fit:cover;
+}
+
+body{
+    background-image: url(./Rosetta_at_Comet_portrait_pillars.jpg);
+    object-fit:cover;
+}
